@@ -241,3 +241,13 @@ All groups of objects has no width or height and have their center points of rot
 When you move objects around and spin the parent group, they revolve around this point.
 
 However you can also change a group's center of rotation simply by using the transform-origin property.
+
+
+### Camera auto rotate mode
+Use the built-in animation keyframes to execute a camera rotation. When this happens, the view changes over time.
+Leave the CSS class empty to use mouseover parallax scrolling.
+```css
+.globalCamera {
+    animation: _rotateYTest 5s infinite linear;
+}
+```
