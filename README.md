@@ -28,7 +28,7 @@ A lightweight library that quickly makes shapes for your next 3D CSS artwork! ðŸ
     --bottomBackground: purple;
 }
 ```
-Read the DOCUMENTATION.md file for more information.
+Read the <a href="https://github.com/khanhtranngoccva/DimensionCSS/blob/main/DOCUMENTATION.md">documentation</a> file for more instructions.
 
 ## How it's made
 **Tech used:**
