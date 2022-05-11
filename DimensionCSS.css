@@ -19,18 +19,18 @@ body {
 .canvas {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: relative;
     perspective: 500px;
     --offsetPerspectiveX: 0px;
     --offsetPerspectiveY: -200px;
     perspective-origin: calc(50% + var(--offsetPerspectiveX)) calc(50% + var(--offsetPerspectiveY));
     filter: blur(0);
+    overflow: hidden;
 }
 
 /* 3D Canvas transform-style */
 .canvas * {
     transform-style: preserve-3d;
-    /*will-change: transform;*/
 }
 
 /* Auto center the camera */
@@ -42,7 +42,7 @@ body {
 
 /* Apply camera rotation here. */
 .globalCamera {
-    transform: rotateY(180deg);
+    /*transform: rotateY(180deg);*/
     will-change: transform;
 }
 
@@ -119,48 +119,54 @@ body {
 ._reusableBox__boxFront {
     transform: rotateY(0deg) translateZ(calc(var(--width) / 2));
     background: var(--frontBackground);
-    border: var(--frontBorder);
+    border-color: var(--frontBorderColor);
     border-width: var(--frontBorderWidth);
+    border-style: var(--frontBorderStyle);
     border-image: var(--frontBorderImage);
 }
 
 ._reusableBox__boxBack {
     transform: rotateY(180deg) translateZ(calc(var(--width) / 2));
     background: var(--backBackground);
-    border: var(--backBorder);
+    border-color: var(--backBorderColor);
     border-width: var(--backBorderWidth);
+    border-style: var(--backBorderStyle);
     border-image: var(--backBorderImage);
 }
 
 ._reusableBox__boxLeft {
     transform: rotateY(-90deg) translateZ(calc(var(--length) / 2));
     background: var(--leftBackground);
-    border: var(--leftBorder);
+    border-color: var(--leftBorderColor);
     border-width: var(--leftBorderWidth);
+    border-style: var(--leftBorderStyle);
     border-image: var(--leftBorderImage);
 }
 
 ._reusableBox__boxRight {
     transform: rotateY(90deg) translateZ(calc(var(--length) / 2));
     background: var(--rightBackground);
-    border: var(--rightBorder);
+    border-color: var(--rightBorderColor);
     border-width: var(--rightBorderWidth);
+    border-style: var(--rightBorderStyle);
     border-image: var(--rightBorderImage);
 }
 
 ._reusableBox__boxTop {
     transform: rotateX(90deg) translateZ(calc(var(--height) / 2));
     background: var(--topBackground);
-    border: var(--topBorder);
+    border-color: var(--topBorderColor);
     border-width: var(--topBorderWidth);
+    border-style: var(--topBorderStyle);
     border-image: var(--topBorderImage);
 }
 
 ._reusableBox__boxBottom {
     transform: rotateX(-90deg) translateZ(calc(var(--height) / 2));
     background: var(--bottomBackground);
-    border: var(--bottomBorder);
+    border-color: var(--bottomBorderColor);
     border-width: var(--bottomBorderWidth);
+    border-style: var(--bottomBorderStyle);
     border-image: var(--bottomBorderImage);
 }
 
@@ -186,26 +192,29 @@ body {
 ._reusableCylinder__cylinderStrip {
     height: var(--height);
     width: var(--width);
-    background: var(--cylinderStripColor);
+    background: var(--cylinderStripBackground);
 }
 
 ._reusableCylinder__cylinderTop {
     transform: rotateX(90deg) translateZ(calc(var(--height) / 2));
-    background: var(--cylinderTopColor);
+    background: var(--cylinderTopBackground);
 }
 
 ._reusableCylinder__cylinderBottom {
     transform: rotateX(-90deg) translateZ(calc(var(--height) / 2));
-    background: var(--cylinderBottomColor);
+    background: var(--cylinderBottomBackground);
 }
 
 /* Reusable cylinder with thickness */
 .reusableThickCylinder {
-
+    transform: translateY(100px);
 }
 
 .reusableThickCylinder .reusableCylinder {
     --radius: var(--outerRadius);
+    transform: none;
+    --cylinderTopBackground: inherit;
+    --cylinderBottomBackground: inherit;
 }
 
 .reusableThickCylinder .reusableCylinderInner {
@@ -216,12 +225,20 @@ body {
     background: none;
 }
 
+.reusableThickCylinder ._reusableCylinder__cylinderStrip {
+    background: var(--cylinderOuterStripBackground);
+}
+
+.reusableThickCylinder .reusableCylinderInner ._reusableCylinder__cylinderStrip {
+    background: var(--cylinderInnerStripBackground);
+}
+
 .reusableThickCylinder .reusableCylinder ._reusableCylinder__cylinderTop {
-    border: var(--thickness) solid var(--cylinderTopColor);
+    border: var(--thickness) solid var(--cylinderTopBackground);
 }
 
 .reusableThickCylinder .reusableCylinder ._reusableCylinder__cylinderBottom {
-    border: var(--thickness) solid var(--cylinderBottomColor);
+    border: var(--thickness) solid var(--cylinderBottomBackground);
 }
 
 .reusableThickCylinder .reusableCylinderInner ._reusableCylinder__cylinderTop, .reusableThickCylinder .reusableCylinderInner ._reusableCylinder__cylinderBottom {
@@ -234,7 +251,7 @@ body {
 
 .reusableDonut .reusableCylinder {
     --radius: calc(var(--thickness) / 2);
-    --cylinderStripColor: var(--color);
+    --cylinderStripBackground: var(--donutColor);
 }
 
 .reusableDonut ._reusableCylinder__cylinderTop, .reusableDonut ._reusableCylinder__cylinderBottom {

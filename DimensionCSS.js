@@ -11,7 +11,7 @@
 
 // Code for the donut.
 (function donut() {
-    const cylinderInDonutCount = 42;
+    const cylinderInDonutCount = 21;
     const baseCylinderAngle = 2 * Math.PI / cylinderInDonutCount;
     const reusableDonutContents = `<div class="reusableCylinder"></div>`.repeat(cylinderInDonutCount);
     Array.from(document.querySelectorAll(".reusableDonut")).forEach(e => {
@@ -25,7 +25,7 @@
 
 // Code for the cylinder.
 (function cylinder() {
-    const cylinderStripCount = 42;
+    const cylinderStripCount = 21;
     const reusableCylinderContents = `<div class="_reusableCylinder__cylinderFace _reusableCylinder__cylinderTop _lighting"></div>` + `<div class="_reusableCylinder__cylinderFace _reusableCylinder__cylinderStrip _lighting"></div>`.repeat(cylinderStripCount) + `<div class="_reusableCylinder__cylinderFace _reusableCylinder__cylinderBottom _lighting"></div>`;
     const baseStripAngle = 2 * Math.PI / cylinderStripCount;
 
@@ -36,7 +36,7 @@
         e.innerHTML = reusableCylinderContents;
         Array.from(e.querySelectorAll("._reusableCylinder__cylinderStrip")).forEach((cylinderStrip, cylinderStripNumber) => {
             cylinderStrip.style.transform = `rotateY(${cylinderStripNumber / cylinderStripCount}turn) translateZ(var(--radius))`;
-            cylinderStrip.style.setProperty("--width", `calc(var(--radius) * ${2 * Math.tan(baseStripAngle / 2)})`);
+            cylinderStrip.style.setProperty("--width", `calc(2px + var(--radius) * ${2 * Math.tan(baseStripAngle / 2)})`);
         });
     });
 })();
