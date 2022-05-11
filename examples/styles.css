@@ -2,10 +2,11 @@
     background: skyblue;
     --offsetPerspectiveY: -50px;
     --offsetPerspectiveX: 20px;
-
+    perspective: 900px;
 }
 
 .globalCamera {
+    animation: _rotateYTest 5s infinite linear;
 }
 
 .reusableBox {
