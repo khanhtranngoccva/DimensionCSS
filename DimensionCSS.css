@@ -89,9 +89,6 @@ body {
 
 /* Reusable boxes */
 .reusableBox {
-    --width: 200px;
-    --length: 200px;
-    --height: 200px;
 }
 
 ._reusableBox__boxFace {
@@ -122,6 +119,7 @@ body {
 ._reusableBox__boxFront {
     transform: rotateY(0deg) translateZ(calc(var(--width) / 2));
     background: var(--frontBackground);
+    border: var(--frontBorder);
     border-width: var(--frontBorderWidth);
     border-image: var(--frontBorderImage);
 }
@@ -129,6 +127,7 @@ body {
 ._reusableBox__boxBack {
     transform: rotateY(180deg) translateZ(calc(var(--width) / 2));
     background: var(--backBackground);
+    border: var(--backBorder);
     border-width: var(--backBorderWidth);
     border-image: var(--backBorderImage);
 }
@@ -136,6 +135,7 @@ body {
 ._reusableBox__boxLeft {
     transform: rotateY(-90deg) translateZ(calc(var(--length) / 2));
     background: var(--leftBackground);
+    border: var(--leftBorder);
     border-width: var(--leftBorderWidth);
     border-image: var(--leftBorderImage);
 }
@@ -143,6 +143,7 @@ body {
 ._reusableBox__boxRight {
     transform: rotateY(90deg) translateZ(calc(var(--length) / 2));
     background: var(--rightBackground);
+    border: var(--rightBorder);
     border-width: var(--rightBorderWidth);
     border-image: var(--rightBorderImage);
 }
@@ -150,6 +151,7 @@ body {
 ._reusableBox__boxTop {
     transform: rotateX(90deg) translateZ(calc(var(--height) / 2));
     background: var(--topBackground);
+    border: var(--topBorder);
     border-width: var(--topBorderWidth);
     border-image: var(--topBorderImage);
 }
@@ -157,6 +159,7 @@ body {
 ._reusableBox__boxBottom {
     transform: rotateX(-90deg) translateZ(calc(var(--height) / 2));
     background: var(--bottomBackground);
+    border: var(--bottomBorder);
     border-width: var(--bottomBorderWidth);
     border-image: var(--bottomBorderImage);
 }

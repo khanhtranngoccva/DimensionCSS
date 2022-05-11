@@ -1,0 +1,25 @@
+.canvas {
+    background: skyblue;
+    --offsetPerspectiveY: -50px;
+    --offsetPerspectiveX: 10px;
+}
+
+.reusableBox {
+    --width: 120px;
+    --height: 100px;
+    --length: 140px;
+    /*animation: _rotateYTest 2s linear infinite;*/
+    --topBackground: gold;
+    --leftBackground: pink;
+    --rightBackground: orange;
+    --backBackground: lime;
+    --frontBackground: #ff7474;
+    --bottomBackground: purple;
+    --frontBorder: 100px solid black;
+    --topBorderImage: linear-gradient(blue, pink);
+}
+
+
+
+
+
