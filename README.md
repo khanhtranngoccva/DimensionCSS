@@ -28,6 +28,7 @@ A lightweight library that quickly makes shapes for your next 3D CSS artwork! ðŸ
     --bottomBackground: purple;
 }
 ```
+Read the DOCUMENTATION.md file for more information.
 
 ## How it's made
 **Tech used:**
@@ -36,7 +37,8 @@ A lightweight library that quickly makes shapes for your next 3D CSS artwork! ðŸ
 <img src="https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=yellow&logo=javascript&labelColor=white&logoColor=yellow" alt="JavaScript"/>
 
 ## Optimizations/Changelog
-Decreased the strip per cylinder count and the cylinder per donut count to improve the performance with insignificant sacrifice of detail.
+- Decreased the strip per cylinder count and the cylinder per donut count to improve the performance with insignificant sacrifice of detail. 
+- Built-in camera rotation has been implemented.
 
 ## Lessons learned
 - Mastered CSS positioning.

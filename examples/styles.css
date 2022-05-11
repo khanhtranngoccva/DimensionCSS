@@ -65,5 +65,5 @@
     --donutRadius: 100px;
     --thickness: 50px;
     --donutColor: pink;
-    transform: translate(300px) rotateX(50deg) ;
+    transform: translate(300px) rotateX(50deg);
 }
