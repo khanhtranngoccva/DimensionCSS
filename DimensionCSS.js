@@ -55,3 +55,10 @@
         camera.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
     });
 })();
+
+// Code for the lighting.
+const mainLight = new Photon.Light();
+const faces = Array.from(document.querySelectorAll("._lighting")).map(face => {
+    return new Photon.Face(face);
+});
+faces.forEach(face => face.render(mainLight, true));
