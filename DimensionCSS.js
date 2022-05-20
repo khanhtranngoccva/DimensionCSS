@@ -60,7 +60,7 @@
 try {
     const mainLight = new Photon.Light();
     const faces = Array.from(document.querySelectorAll("._lighting")).map(face => {
-        return new Photon.Face(face);
+        return new Photon.Face(face, 0.1);
     });
     faces.forEach(face => face.render(mainLight, true));
 } catch (e) {
