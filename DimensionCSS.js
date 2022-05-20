@@ -6,7 +6,7 @@
                 <div class="_reusableBox__boxFace _reusableBox__boxRight _lighting"></div>
                 <div class="_reusableBox__boxFace _reusableBox__boxBottom _lighting"></div>
                 <div class="_reusableBox__boxFace _reusableBox__boxTop _lighting"></div>`;
-    Array.from(document.querySelectorAll(".reusableBox")).forEach(e => e.innerHTML = reusableBoxContents);
+    Array.from(document.querySelectorAll(".reusableBox")).forEach(e => e.innerHTML || (e.innerHTML = reusableBoxContents));
 })();
 
 // Code for the donut.
@@ -28,12 +28,11 @@
     const cylinderStripCount = 21;
     const reusableCylinderContents = `<div class="_reusableCylinder__cylinderFace _reusableCylinder__cylinderTop _lighting"></div>` + `<div class="_reusableCylinder__cylinderFace _reusableCylinder__cylinderStrip _lighting"></div>`.repeat(cylinderStripCount) + `<div class="_reusableCylinder__cylinderFace _reusableCylinder__cylinderBottom _lighting"></div>`;
     const baseStripAngle = 2 * Math.PI / cylinderStripCount;
-
     const thickCylinderContents = `<div class="reusableCylinder"></div><div class="reusableCylinder reusableCylinderInner"></div>`
 
-    Array.from(document.querySelectorAll(".reusableThickCylinder")).forEach(e => e.innerHTML = thickCylinderContents);
+    Array.from(document.querySelectorAll(".reusableThickCylinder")).forEach(e => e.innerHTML || (e.innerHTML = thickCylinderContents));
     Array.from(document.querySelectorAll(".reusableCylinder")).forEach(e => {
-        e.innerHTML = reusableCylinderContents;
+        e.innerHTML || (e.innerHTML = reusableCylinderContents);
         Array.from(e.querySelectorAll("._reusableCylinder__cylinderStrip")).forEach((cylinderStrip, cylinderStripNumber) => {
             cylinderStrip.style.transform = `rotateY(${cylinderStripNumber / cylinderStripCount}turn) translateZ(var(--radius))`;
             cylinderStrip.style.setProperty("--width", `calc(2px + var(--radius) * ${2 * Math.tan(baseStripAngle / 2)})`);
